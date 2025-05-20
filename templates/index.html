@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Sensor Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; max-width: 1000px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        h1 { font-size: 24px; }
+    </style>
+</head>
+<body>
+    <h1>Garden Sensor Data</h1>
+    <table>
+        <tr>
+            <th>Timestamp</th>
+            <th>Air Temp (°C)</th>
+            <th>Humidity (%)</th>
+            <th>Soil Moisture 1 (%)</th>
+            <th>Soil Moisture 2 (%)</th>
+            <th>Soil Moisture 3 (%)</th>
+            <th>Soil Temp 1 (°C)</th>
+            <th>Soil Temp 2 (°C)</th>
+            <th>Soil Temp 3 (°C)</th>
+            <th>Light (lux)</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+            <td>{{ row[8] }}</td>
+            <td>{{ row[9] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
